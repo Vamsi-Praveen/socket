@@ -13,7 +13,7 @@ const App = () => {
       setRec((old) => [...old, msg]);
     })
     console.log(socket)
-  }, [rec])
+  }, [])
   return (
     <>
       <h1>Chat</h1>
