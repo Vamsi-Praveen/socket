@@ -5,9 +5,7 @@ import './index.css'
 import { SocketProvider } from './context/socketContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <SocketProvider>
-      <App />
-    </SocketProvider>
-  </React.StrictMode>,
+  <SocketProvider>
+    <App />
+  </SocketProvider>
 )

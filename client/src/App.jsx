@@ -15,9 +15,6 @@ const App = () => {
       setRec((old) => [...old, msg]);
     })
     console.log(socket)
-    return ()=>{
-      socket.disconnect();
-    }
   }, [socket])
   return (
     <>
