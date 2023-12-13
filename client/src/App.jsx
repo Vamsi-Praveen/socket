@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useSocket } from './context/socketContext.jsx'
+import { io } from 'socket.io-client'
 
 const App = () => {
   const { socket } = useSocket();
+  // const socket = io('http://localhost:4000')
   const [msg, setMsg] = useState('')
   const [rec, setRec] = useState([])
   const handleMessage = () => {
@@ -13,7 +15,10 @@ const App = () => {
       setRec((old) => [...old, msg]);
     })
     console.log(socket)
-  }, [])
+    return ()=>{
+      socket.disconnect();
+    }
+  }, [socket])
   return (
     <>
       <h1>Chat</h1>
